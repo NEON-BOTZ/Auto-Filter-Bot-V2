@@ -26,7 +26,7 @@ from database.mdb import (
 
 
 
-@Client.on_message(filters.group & filters.command(["add"]))
+@Client.on_message(filters.group & filters.command(["addch"]))
 async def addchannel(client: Bot, message: Message):
 
     if message.from_user.id not in AUTH_USERS:
@@ -37,7 +37,7 @@ async def addchannel(client: Bot, message: Message):
     except:
         await message.reply_text(
             "<i>Enter in correct format!\n\n<code>/add channelid</code>  or\n"
-            "<code>/add @channelusername</code></i>"
+            "<code>/addch @channelusername</code></i>"
             "\n\nGet Channel id from @ChannelidHEXbot",
         )
         return
